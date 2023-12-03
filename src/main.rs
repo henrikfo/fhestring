@@ -19,11 +19,11 @@ fn main() -> Result<(), Box<dyn error::Error>> {
     // let pattern = &args[2];
 
     // Parse string and encode to ASCII representation
-    let string = "abs0";
+    let string = "AbS0";
     let asc = string.chars()
-        .map(|s| s.to_ascii_lowercase())
+        .map(|s| s as u8)
         .collect::<Vec<_>>();
-    println!("{:?}", asc);
+    println!("{:?}", asc.as_bytes());
 
     // let clear_a = 1344u32;
     // let clear_b = 5u32;

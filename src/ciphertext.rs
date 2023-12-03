@@ -10,9 +10,9 @@ pub struct FheString{
     pub str: Vec<FheAsciiChar>,
 }
 
-impl FheString for {
+impl encrypt for FheString {
 
-    pub fn encrypt_str(
+    pub fn encrypt(
         client_key: &RadixClientKey,
         s: &str,
     ) -> Result<FheString, Box<dyn std::error::Error>> {
@@ -25,19 +25,13 @@ impl FheString for {
             .collect())
     }
 
-    pub fn decrypt(encstring: FheString) -> str{
-        let mut plainstring = vec![];
-    }
-
-    pub fn contains(&self, s: &str) -> bool{
-        
-    }
-
-    pub fn starts_with(&self, s: &str) -> bool{
-
-    }
-    
-    pub fn ends_with(&self, s: &str) -> bool{
-        
-    }
+    // pub fn decrypt(encstring: FheString) -> str{
+    //     let mut plainstring = vec![];
+    // }
+    // pub fn contains(&self, s: &str) -> bool{   
+    // }
+    // pub fn starts_with(&self, s: &str) -> bool{
+    // }
+    // pub fn ends_with(&self, s: &str) -> bool{
+    // }
 }
