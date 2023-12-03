@@ -10,7 +10,7 @@ pub struct FheString{
     pub str: Vec<FheAsciiChar>,
 }
 
-impl FheString {
+impl FheString for {
 
     pub fn encrypt_str(
         client_key: &RadixClientKey,

@@ -2,7 +2,7 @@ use std::{env, error};
 use tfhe::prelude::*;
 use tfhe::{generate_keys, set_server_key, ConfigBuilder, FheUint16, FheUint32, FheUint8};
 
-mod cipertext;
+// mod cipertext;
 
 fn main() -> Result<(), Box<dyn error::Error>> {
     // Basic configuration to use homomorphic integers
@@ -19,15 +19,19 @@ fn main() -> Result<(), Box<dyn error::Error>> {
     // let pattern = &args[2];
 
     // Parse string and encode to ASCII representation
-    
+    let string = "abs0";
+    let asc = string.chars()
+        .map(|s| s.to_ascii_lowercase())
+        .collect::<Vec<_>>();
+    println!("{:?}", asc);
 
-    let clear_a = 1344u32;
-    let clear_b = 5u32;
+    // let clear_a = 1344u32;
+    // let clear_b = 5u32;
 
     // Encrypting the input data using the (private) client_key
     // FheUint32: Encrypted equivalent to u32
-    let mut encrypted_a = FheUint16::try_encrypt(clear_a, &client_key)?;
-    let encrypted_b = FheUint16::try_encrypt(clear_b, &client_key)?;
+    // let mut encrypted_a = FheUint16::try_encrypt(clear_a, &client_key)?;
+    // let encrypted_b = FheUint16::try_encrypt(clear_b, &client_key)?;
 
 
     // assert_eq!(clear_res, 1_u8);
@@ -36,4 +40,3 @@ fn main() -> Result<(), Box<dyn error::Error>> {
 }
 
     // Encrypt string
-}
